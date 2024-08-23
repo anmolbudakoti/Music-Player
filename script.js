@@ -46,19 +46,6 @@ function loadTrack(index) {
     trackName.textContent = track.name;
     trackArtist.textContent = track.artist;
     cover.style.backgroundImage = `url(${track.cover})`;
-
-     // Reset progress bar and timer
-     progressBar.style.width = `0%`;
-     currentTimeElem.textContent = `0:00`;
-     durationElem.textContent = `0:00`;
-     
-     // Wait until metadata is loaded
-     audioPlayer.addEventListener('loadedmetadata', () => {
-         durationElem.textContent = formatTime(audioPlayer.duration);
-     });
- 
-     // Auto play the track
-     playTrack(true);
 }
 
 function playTrack() {
